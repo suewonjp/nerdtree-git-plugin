@@ -340,6 +340,10 @@ augroup nerdtreegitplugin
     autocmd!
     autocmd User NERDTreeInit call s:onNERDTreeInit(s:path2str(b:NERDTree.root.path))
     autocmd User NERDTreeNewRoot call s:onNERDTreeDirChanged(s:path2str(b:NERDTree.root.path))
+    " Go to the first changed node from anywhere
+    autocmd FileType nerdtree nmap <silent><buffer> ]]c P]c
+    " Go to the last changed node from anywhere
+    autocmd FileType nerdtree nmap <silent><buffer> [[c G[c
 augroup end
 
 call s:setupNERDTreeKeyMappings()
